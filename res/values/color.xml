@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="my_blue">#4e83ed</color>
+    <color name="my_dark_blue">#2c61cb</color>
+    <color name="my_red">#f31e1b</color>
+    <color name="my_dark_red">#ba0d11</color>
+    <color name="my_green">#52f514</color>
+    <color name="my_dark_green">#13b909</color>
+    <color name="my_light_gray">#f5f5f5</color>
+    <color name="my_dark_gray">#aeaeae</color>
+
+</resources>
