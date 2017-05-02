@@ -13,23 +13,21 @@
         android:textSize="25sp" />
 
     <Button
-        android:id="@+id/btn_start"
+        android:id="@+id/btn_leave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/btn_start"
-        android:text="@string/start"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/btn_leave"
+        android:enabled="false"
+        android:text="@string/leave"
         android:textColor="#fff" />
 
-    <Button
-        android:id="@+id/btn_stop"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/lly_queue"
+        android:layout_width="136dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="50dp"
-        android:background="@drawable/btn_stop"
-        android:enabled="false"
-        android:text="@string/stop"
-        android:textColor="#fff" />
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal" />
 
     <Button
         android:id="@+id/btn_arrive"

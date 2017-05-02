@@ -2,8 +2,7 @@ package com.example.dududu;
 
 import java.io.File;
 
-import com.example.dududu.listener.ArriveListener;
-import com.example.dududu.listener.StartAndStopListener;
+import com.example.dududu.listener.QueueListener;
 import com.example.dududu.util.PathManager;
 
 import android.annotation.SuppressLint;
@@ -34,8 +33,8 @@ public class MainActivity extends Activity {
     createDateDirectory();
 
     View view;
-    Button btn_start;
-    Button btn_stop;
+    Button btn_leave;
+    LinearLayout lly_queue;
     Button btn_arrive;
     for (int i = 0; i < 10; ++i) {
       // 加载子布局
@@ -50,16 +49,15 @@ public class MainActivity extends Activity {
       // 设置居中
       view.setLayoutParams(params);
 
-      btn_start = (Button) view.findViewById(R.id.btn_start);
-      btn_stop = (Button) view.findViewById(R.id.btn_stop);
+      btn_leave = (Button) view.findViewById(R.id.btn_leave);
+      lly_queue = (LinearLayout) view.findViewById(R.id.lly_queue);
       btn_arrive = (Button) view.findViewById(R.id.btn_arrive);
 
+      QueueListener queueListener =
+          new QueueListener(MainActivity.this, i + 1, btn_leave, lly_queue);
       // 添加监听器
-      btn_arrive.setOnClickListener(new ArriveListener(MainActivity.this, "到达" + (i + 1)));
-      StartAndStopListener startAndStopListener =
-          new StartAndStopListener(MainActivity.this, btn_start, btn_stop, "服务" + (i + 1));
-      btn_start.setOnClickListener(startAndStopListener);
-      btn_stop.setOnClickListener(startAndStopListener);
+      btn_arrive.setOnClickListener(queueListener);
+      btn_leave.setOnClickListener(queueListener);
 
       rootView.addView(view);
     }
